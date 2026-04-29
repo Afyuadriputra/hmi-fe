@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri - SI-HMI Pekanbaru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#00450d",
+            "primary-container": "#1b5e20",
+            tertiary: "#705d00",
+            surface: "#f9f9f9",
+            "surface-low": "#f3f3f3",
+            charcoal: "#5f5e5e"
+          },
+          fontFamily: { display: ["Newsreader"], body: ["Inter"] }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-charcoal font-body">
+  <nav class="fixed top-0 z-50 w-full border-b border-[#00450d]/10 bg-white/90 shadow-[0_10px_32px_-24px_rgba(0,69,13,0.45)] backdrop-blur-xl">
+    <div class="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 md:px-8">
+      <a href="../halaman_beranda/code.html" class="shrink-0 font-['Newsreader'] text-2xl font-semibold tracking-tight text-[#00450d]">SI-HMI Pekanbaru</a>
+      <div class="hidden items-center gap-1 text-sm font-medium md:flex">        <a href="../halaman_beranda/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Beranda</a>
+        <a href="../direktori_program/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Program</a>
+        <a href="../direktori_agenda/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Agenda</a>
+        <a href="../arsip_berita/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Wacana</a>
+        <a href="../halaman_galeri/code.html" class="rounded-full bg-[#00450d]/10 px-3.5 py-2 text-[#00450d]" aria-current="page">Galeri</a>
+        <a href="../profil_organisasi/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Profil</a>
+        <a href="../halaman_kontak/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Kontak</a>      </div>
+      <a href="../direktori_formulir_pendaftaran/code.html" class="shrink-0 rounded-xl bg-gradient-to-br from-[#00450d] to-[#1b5e20] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_14px_32px_-20px_rgba(0,69,13,0.75)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_38px_-22px_rgba(0,69,13,0.8)] focus:outline-none focus:ring-2 focus:ring-[#00450d]/25">Pendaftaran</a>
+    </div>
+  </nav><main class="mx-auto max-w-7xl px-8 pb-24 pt-36">
+    <header class="grid gap-10 md:grid-cols-[38.2%_61.8%]">
+      <div>
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-tertiary">GET /api/v1/gallery/</p>
+        <h1 class="font-display text-5xl leading-tight text-primary md:text-6xl">Arsip Visual Pergerakan</h1>
+      </div>
+      <p class="max-w-2xl text-lg leading-8 text-charcoal">
+        Dokumentasi kegiatan, forum intelektual, pengkaderan, dan momen organisasi. Filter kategori memakai data dari
+        <code class="rounded bg-surface-low px-2 py-1 text-sm">/api/v1/gallery/categories/</code>.
+      </p>
+    </header>
+
+    <section class="mt-16 flex flex-wrap gap-3" data-api="GET /api/v1/gallery/categories/">
+      <button class="rounded-xl bg-gradient-to-br from-primary to-primary-container px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white">Semua</button>
+      <button class="rounded-xl bg-white px-5 py-3 text-xs font-semibold uppercase tracking-widest text-primary">LK 1</button>
+      <button class="rounded-xl bg-white px-5 py-3 text-xs font-semibold uppercase tracking-widest text-primary">Diskusi</button>
+      <button class="rounded-xl bg-white px-5 py-3 text-xs font-semibold uppercase tracking-widest text-primary">Konferensi</button>
+    </section>
+
+    <section class="mt-12 grid gap-6 md:grid-cols-3" data-api="GET /api/v1/gallery/?category=:slug">
+      <article class="group overflow-hidden rounded-xl bg-white shadow-[0_12px_32px_-4px_rgba(26,28,28,0.06)]">
+        <div class="aspect-[4/5] bg-surface-low">
+          <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=80" alt="Dokumentasi LK 1" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-tertiary" data-field="category">LK 1</p>
+          <h2 class="font-display text-2xl text-primary" data-field="title">Forum Pembukaan Basic Training</h2>
+          <p class="mt-3 text-sm leading-6" data-field="description">Dokumentasi pembukaan latihan kader dan orientasi peserta.</p>
+        </div>
+      </article>
+      <article class="group overflow-hidden rounded-xl bg-white shadow-[0_12px_32px_-4px_rgba(26,28,28,0.06)] md:translate-y-10">
+        <div class="aspect-[4/5] bg-surface-low">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80" alt="Diskusi kader" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-tertiary" data-field="category">Diskusi</p>
+          <h2 class="font-display text-2xl text-primary" data-field="title">Dialog Intelektual Pekanbaru</h2>
+          <p class="mt-3 text-sm leading-6" data-field="description">Ruang temu gagasan kader dan narasumber lintas disiplin.</p>
+        </div>
+      </article>
+      <article class="group overflow-hidden rounded-xl bg-white shadow-[0_12px_32px_-4px_rgba(26,28,28,0.06)]">
+        <div class="aspect-[4/5] bg-surface-low">
+          <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=900&q=80" alt="Konferensi cabang" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+        </div>
+        <div class="p-6">
+          <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-tertiary" data-field="category">Konferensi</p>
+          <h2 class="font-display text-2xl text-primary" data-field="title">Konferensi Cabang</h2>
+          <p class="mt-3 text-sm leading-6" data-field="description">Arsip visual agenda permusyawaratan organisasi.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <details class="fixed bottom-4 right-4 z-[60] group sm:bottom-6 sm:right-6">
+    <summary class="flex list-none cursor-pointer select-none items-center gap-2 rounded-full bg-white/88 px-3.5 py-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#00450d] shadow-[0_14px_36px_-18px_rgba(26,28,28,0.45)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_18px_42px_-18px_rgba(0,69,13,0.45)] focus:outline-none focus:ring-2 focus:ring-[#00450d]/25 active:translate-y-0">
+      <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="7" cy="6" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="17" cy="18" r="1"/></svg>
+      <span>Peta</span>
+    </summary>
+    <nav aria-label="Peta halaman" class="absolute bottom-full right-0 mb-3 w-[min(21rem,calc(100vw-2rem))] origin-bottom-right scale-95 rounded-2xl bg-white/90 p-2 text-xs font-medium opacity-0 shadow-[0_22px_60px_-24px_rgba(26,28,28,0.45)] backdrop-blur-xl transition duration-150 group-open:scale-100 group-open:opacity-100">
+      <div class="mb-1 flex items-center justify-between px-2 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#705d00]">
+        <span>Navigasi</span>
+        <span class="h-px w-10 bg-[#00450d]/15"></span>
+      </div>
+      <div class="grid grid-cols-1 gap-1 sm:grid-cols-2">
+        <a href="../halaman_beranda/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg><span class="truncate">Beranda</span></a>
+        <a href="../profil_organisasi/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.8-4.2 14.2-4.2 16 0"/></svg><span class="truncate">Profil</span></a>
+        <a href="../kepengurusan_cabang/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M2 21c1.2-4 10.8-4 12 0"/><path d="M17 11a3 3 0 1 0 0-6"/><path d="M16 16c2.8.3 5 1.8 6 5"/></svg><span class="truncate">Kepengurusan</span></a>
+        <a href="../sejarah_ketua_umum/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M12 7v6l4 2"/></svg><span class="truncate">Sejarah</span></a>
+        <a href="../direktori_program/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg><span class="truncate">Program</span></a>
+        <a href="../direktori_agenda/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v4M17 3v4"/><path d="M4 7h16v14H4z"/><path d="M4 11h16"/></svg><span class="truncate">Agenda</span></a>
+        <a href="../arsip_berita/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l3 3v15H6z"/><path d="M14 3v4h4"/><path d="M9 11h6M9 15h6M9 19h3"/></svg><span class="truncate">Wacana & Arsip</span></a>
+        <a href="../halaman_galeri/code.html" class="flex items-center gap-2 rounded-xl bg-[#00450d] px-3 py-2.5 text-white shadow-[0_12px_28px_-18px_rgba(0,69,13,0.75)]" aria-current="page"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="m8 15 3-3 3 3 2-2 3 4"/><circle cx="9" cy="9" r="1.5"/></svg><span class="truncate">Galeri</span></a>
+        <a href="../direktori_formulir_pendaftaran/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18H5z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg><span class="truncate">Pendaftaran</span></a>
+        <a href="../pengajuan_upload_berita/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 20h14"/></svg><span class="truncate">Ajukan Berita</span></a>
+        <a href="../lacak_pengajuan_berita/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h7"/><circle cx="18" cy="16" r="3"/><path d="m20 18 2 2"/></svg><span class="truncate">Lacak Status</span></a>
+        <a href="../halaman_kontak/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg><span class="truncate">Kontak</span></a>
+      </div>
+    </nav>
+  </details>
+</body>
+</html>

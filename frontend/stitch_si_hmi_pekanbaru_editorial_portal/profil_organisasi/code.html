@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Organisasi Profile - SI-HMI Pekanbaru</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dim": "#dcd9d9",
+                      "secondary-fixed": "#fce17e",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed": "#221b00",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#e5e2e1",
+                      "background": "#fcf9f8",
+                      "surface-container": "#f0eded",
+                      "surface": "#fcf9f8",
+                      "on-tertiary-container": "#4c3f00",
+                      "surface-bright": "#fcf9f8",
+                      "on-surface": "#1c1b1c",
+                      "secondary": "#705d00",
+                      "error-container": "#ffdad6",
+                      "on-surface-variant": "#41493e",
+                      "outline-variant": "#c0c9bb",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed": "#221b00",
+                      "on-primary-fixed-variant": "#135219",
+                      "tertiary-fixed": "#ffe16e",
+                      "inverse-primary": "#95d78e",
+                      "primary-container": "#00450d",
+                      "surface-tint": "#2e6b2f",
+                      "on-primary-container": "#74b46e",
+                      "inverse-on-surface": "#f3f0f0",
+                      "primary": "#002c06",
+                      "tertiary-fixed-dim": "#e1c554",
+                      "surface-container-low": "#f6f3f2",
+                      "secondary-fixed-dim": "#dfc566",
+                      "surface-container-high": "#eae7e7",
+                      "surface-variant": "#e5e2e1",
+                      "secondary-container": "#fce17e",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#313030",
+                      "on-tertiary-fixed-variant": "#544600",
+                      "tertiary": "#705d00",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#544600",
+                      "on-background": "#1c1b1c",
+                      "outline": "#717a6d",
+                      "tertiary-container": "#c5aa3c",
+                      "on-secondary-container": "#766307",
+                      "primary-fixed": "#b0f3a7",
+                      "on-primary-fixed": "#002203",
+                      "primary-fixed-dim": "#95d78e",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "golden-ratio-wide": "61.8%",
+                      "golden-ratio-thin": "38.2%",
+                      "section-gap": "80px",
+                      "base": "8px",
+                      "margin": "32px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Newsreader"
+                      ],
+                      "headline-lg": [
+                              "Newsreader"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-md": [
+                              "Newsreader"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Newsreader"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-md": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+        /* Custom Button Gradient based on guidelines */
+        .btn-primary-gradient {
+            background: linear-gradient(135deg, theme('colors.primary') 0%, theme('colors.primary-container') 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased">
+  <nav class="fixed top-0 z-50 w-full border-b border-[#00450d]/10 bg-white/90 shadow-[0_10px_32px_-24px_rgba(0,69,13,0.45)] backdrop-blur-xl">
+    <div class="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 md:px-8">
+      <a href="../halaman_beranda/code.html" class="shrink-0 font-['Newsreader'] text-2xl font-semibold tracking-tight text-[#00450d]">SI-HMI Pekanbaru</a>
+      <div class="hidden items-center gap-1 text-sm font-medium md:flex">        <a href="../halaman_beranda/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Beranda</a>
+        <a href="../direktori_program/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Program</a>
+        <a href="../direktori_agenda/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Agenda</a>
+        <a href="../arsip_berita/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Wacana</a>
+        <a href="../halaman_galeri/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Galeri</a>
+        <a href="../profil_organisasi/code.html" class="rounded-full bg-[#00450d]/10 px-3.5 py-2 text-[#00450d]" aria-current="page">Profil</a>
+        <a href="../halaman_kontak/code.html" class="rounded-full px-3.5 py-2 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none">Kontak</a>      </div>
+      <a href="../direktori_formulir_pendaftaran/code.html" class="shrink-0 rounded-xl bg-gradient-to-br from-[#00450d] to-[#1b5e20] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_14px_32px_-20px_rgba(0,69,13,0.75)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_38px_-22px_rgba(0,69,13,0.8)] focus:outline-none focus:ring-2 focus:ring-[#00450d]/25">Pendaftaran</a>
+    </div>
+  </nav><!-- Main Content Canvas -->
+<main class="pt-[100px] md:pt-[140px] pb-section-gap">
+<!-- Hero Section (Editorial Focus) -->
+<section class="max-w-[1440px] mx-auto px-8 mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-[38.2%_61.8%] gap-gutter items-center">
+<!-- Left: Title & Intro -->
+<div class="pr-0 md:pr-12">
+<span class="block font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-6 border-b border-outline-variant inline-block pb-1">
+                        Garda Intelektual
+                    </span>
+<h1 class="font-display-lg text-display-lg text-primary text-balance mb-margin">
+                        Forging Intellect &amp; Integrity
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                        SI-HMI Pekanbaru stands as a bastion of scholarly discourse and community leadership. We are committed to nurturing a generation that bridges rigorous academic inquiry with proactive civic duty.
+                    </p>
+<div class="flex items-center gap-4">
+<span class="h-[1px] w-12 bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-primary-container uppercase">Est. 1998</span>
+</div>
+</div>
+<!-- Right: Atmospheric Image -->
+<div class="relative w-full h-[500px] rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(0,69,13,0.08)] mt-12 md:mt-0">
+<div class="absolute inset-0 bg-surface-tint/10 mix-blend-multiply z-10"></div>
+<img alt="University campus building with classical architecture in warm afternoon sunlight, emphasizing academic heritage and institutional authority" class="w-full h-full object-cover filter grayscale-[20%] contrast-110" data-alt="University campus building with classical architecture in warm afternoon sunlight, emphasizing academic heritage and institutional authority" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALEbN9Ib_JbaqJ-pkZlhSYa-o-sQlINu1RpWrQLE5ZapjkxdgS-1qcKPVHaQu6gfBEYjMWDNEY_xDYnZXtNuT2bpIq1LrmONqLlDC9YbF7pGcZ4MZJKN_r4-A7LlzJFdC2d3sFUHkA0QDmkyiSX6PueR-VJRCncDhqXigF6MA2TDnM_rN-AnikfIHA12ml5FWURYexShxZH-MB4wYtW7XMUndUfaEESfWj35HjNbsvZO5MbA7knH-fKYRh3YUBtUR5UtxW8mMinn_q"/>
+</div>
+</div>
+</section>
+<!-- Vision & Mandate (Tonal Layers & Pull Quotes) -->
+<section class="bg-surface-container py-section-gap border-y border-outline-variant/30">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-[61.8%_38.2%] gap-gutter">
+<!-- Left: Large Pull Quote -->
+<div class="flex flex-col justify-center pr-0 md:pr-16 border-b md:border-b-0 md:border-r border-outline-variant/40 pb-12 md:pb-0">
+<blockquote class="font-display-md text-display-md text-primary leading-tight text-balance">
+                            "True leadership is born not from ambition, but from the relentless pursuit of knowledge and the courage to serve."
+                        </blockquote>
+<cite class="mt-8 font-label-lg text-label-lg text-secondary uppercase tracking-wider block">
+                            — Core Mandate, Chapter I
+                        </cite>
+</div>
+<!-- Right: Structured Tenets -->
+<div class="flex flex-col justify-center pl-0 md:pl-12 pt-12 md:pt-0 space-y-12">
+<div>
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<h3 class="font-headline-md text-headline-md text-primary">Akademik Excellence</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Cultivating an environment where rigorous debate and scholarly research form the bedrock of all organizational activities.
+                            </p>
+</div>
+<div>
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">public</span>
+<h3 class="font-headline-md text-headline-md text-primary">Civic Responsibility</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Translating academic insight into tangible community action, ensuring our discourse serves the public good.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Archival Sejarah Layout -->
+<section class="max-w-[1440px] mx-auto px-8 pt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-[38.2%_61.8%] gap-gutter">
+<!-- Left: Section Header -->
+<div class="sticky top-[140px] self-start mb-12 md:mb-0">
+<h2 class="font-display-md text-display-md text-primary mb-4">The Arsip</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-sm">
+                        A brief chronicle of our origins, tracing the lineage of thought that shaped SI-HMI Pekanbaru.
+                    </p>
+<a class="inline-flex items-center gap-2 font-label-lg text-label-lg text-primary hover:text-secondary transition-colors uppercase tracking-wide" href="../sejarah_ketua_umum/code.html">
+                        Explore Full Sejarah
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a class="mt-4 inline-flex items-center gap-2 font-label-lg text-label-lg text-primary hover:text-secondary transition-colors uppercase tracking-wide" href="../kepengurusan_cabang/code.html">
+                        Lihat Kepengurusan
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Right: Content Stream -->
+<div class="space-y-margin border-l border-outline-variant/30 pl-8 md:pl-16">
+<div class="relative">
+<div class="absolute -left-[33px] md:-left-[65px] top-2 w-2 h-2 rounded-full bg-primary-container"></div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-2">Era of Genesis — 1998</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">The Founding Assembly</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                            Amidst a period of significant social transition, a coalition of student intellectuals convened in Pekanbaru. Recognizing the need for an organized platform that prioritized intellectual rigor over pure activism, the foundation for the current organizational structure was drafted.
+                        </p>
+<img alt="Vintage looking photograph of students gathered around a large wooden table reviewing documents, sepia tones" class="w-full h-[300px] object-cover rounded-lg filter grayscale opacity-90 shadow-sm" data-alt="Vintage looking photograph of students gathered around a large wooden table reviewing documents, sepia tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8FlG65R6u0IrQrPlK1vdey0XVWw9TzfQYoNta8RB8rFYGXeQNAz3TrnID8ICmlLHxaZ21ihl9GTAJKzJzD2FcwgNCYr3L5Ydw10-5kudC3RkrogDpwPZj79kfuiIq0Ne8e021FaCaUswxNOTW8DXKQHV0UDXPamYQ0pRILZ2SnKij_PBMxHgESu6KEOY7Z9GaCvxJMejUTM3uvpLbWKJ7qPIYthhMZIw4EiGLh1Xqnl-bNSM1YC-6X2vomZUhImIFouP-0AHbqPzG"/>
+</div>
+<div class="relative pt-8">
+<div class="absolute -left-[33px] md:-left-[65px] top-10 w-2 h-2 rounded-full bg-outline"></div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-2">Expansion — 2005</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">The Wacana Journals</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Pembentukan sayap publikasi resmi menandai peralihan dari diskusi internal menuju kontribusi intelektual publik. Edisi awal Buletin Garda disebarkan ke berbagai kampus di provinsi dan menguatkan reputasi organisasi sebagai ruang pemikiran.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full py-20 px-8 bg-[#f3f3f3] dark:bg-slate-950 border-t border-[#1b5e20]/10">
+<div class="grid grid-cols-1 md:grid-cols-[38%_62%] gap-12 max-w-[1440px] mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col">
+<div class="font-['Newsreader'] text-3xl font-black text-[#00450d] dark:text-white mb-6">
+                    SI-HMI Pekanbaru
+                </div>
+<p class="text-[#00450d] dark:text-[#1b5e20] font-['Inter'] text-xs uppercase tracking-widest mt-auto">
+                    � 2024 SI-HMI Pekanbaru. Garda Intelektual.
+                </p>
+</div>
+<!-- Links Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col space-y-4 font-['Inter'] text-xs uppercase tracking-widest">
+<a class="text-slate-500 hover:text-[#00450d] hover:underline decoration-[#b8860b] underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="../profil_organisasi/code.html">Kebijakan Editorial</a>
+</div>
+<div class="flex flex-col space-y-4 font-['Inter'] text-xs uppercase tracking-widest">
+<a class="text-slate-500 hover:text-[#00450d] hover:underline decoration-[#b8860b] underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="../halaman_kontak/code.html">Kebijakan Privasi</a>
+</div>
+<div class="flex flex-col space-y-4 font-['Inter'] text-xs uppercase tracking-widest">
+<a class="text-slate-500 hover:text-[#00450d] hover:underline decoration-[#b8860b] underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="../halaman_kontak/code.html">Kontak Secretary</a>
+</div>
+<div class="flex flex-col space-y-4 font-['Inter'] text-xs uppercase tracking-widest">
+<a class="text-slate-500 hover:text-[#00450d] hover:underline decoration-[#b8860b] underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="../arsip_berita/code.html">Arsips</a>
+</div>
+</div>
+</div>
+</footer>
+
+  <details class="fixed bottom-4 right-4 z-[60] group sm:bottom-6 sm:right-6">
+    <summary class="flex list-none cursor-pointer select-none items-center gap-2 rounded-full bg-white/88 px-3.5 py-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#00450d] shadow-[0_14px_36px_-18px_rgba(26,28,28,0.45)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_18px_42px_-18px_rgba(0,69,13,0.45)] focus:outline-none focus:ring-2 focus:ring-[#00450d]/25 active:translate-y-0">
+      <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="7" cy="6" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="17" cy="18" r="1"/></svg>
+      <span>Peta</span>
+    </summary>
+    <nav aria-label="Peta halaman" class="absolute bottom-full right-0 mb-3 w-[min(21rem,calc(100vw-2rem))] origin-bottom-right scale-95 rounded-2xl bg-white/90 p-2 text-xs font-medium opacity-0 shadow-[0_22px_60px_-24px_rgba(26,28,28,0.45)] backdrop-blur-xl transition duration-150 group-open:scale-100 group-open:opacity-100">
+      <div class="mb-1 flex items-center justify-between px-2 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#705d00]">
+        <span>Navigasi</span>
+        <span class="h-px w-10 bg-[#00450d]/15"></span>
+      </div>
+      <div class="grid grid-cols-1 gap-1 sm:grid-cols-2">
+        <a href="../halaman_beranda/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg><span class="truncate">Beranda</span></a>
+        <a href="../profil_organisasi/code.html" class="flex items-center gap-2 rounded-xl bg-[#00450d] px-3 py-2.5 text-white shadow-[0_12px_28px_-18px_rgba(0,69,13,0.75)]" aria-current="page"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.8-4.2 14.2-4.2 16 0"/></svg><span class="truncate">Profil</span></a>
+        <a href="../kepengurusan_cabang/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M2 21c1.2-4 10.8-4 12 0"/><path d="M17 11a3 3 0 1 0 0-6"/><path d="M16 16c2.8.3 5 1.8 6 5"/></svg><span class="truncate">Kepengurusan</span></a>
+        <a href="../sejarah_ketua_umum/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M12 7v6l4 2"/></svg><span class="truncate">Sejarah</span></a>
+        <a href="../direktori_program/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg><span class="truncate">Program</span></a>
+        <a href="../direktori_agenda/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v4M17 3v4"/><path d="M4 7h16v14H4z"/><path d="M4 11h16"/></svg><span class="truncate">Agenda</span></a>
+        <a href="../arsip_berita/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l3 3v15H6z"/><path d="M14 3v4h4"/><path d="M9 11h6M9 15h6M9 19h3"/></svg><span class="truncate">Wacana & Arsip</span></a>
+        <a href="../halaman_galeri/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="m8 15 3-3 3 3 2-2 3 4"/><circle cx="9" cy="9" r="1.5"/></svg><span class="truncate">Galeri</span></a>
+        <a href="../direktori_formulir_pendaftaran/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18H5z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg><span class="truncate">Pendaftaran</span></a>
+        <a href="../pengajuan_upload_berita/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 20h14"/></svg><span class="truncate">Ajukan Berita</span></a>
+        <a href="../lacak_pengajuan_berita/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h7"/><circle cx="18" cy="16" r="3"/><path d="m20 18 2 2"/></svg><span class="truncate">Lacak Status</span></a>
+        <a href="../halaman_kontak/code.html" class="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[#41493e] transition hover:bg-[#00450d]/5 hover:text-[#00450d] focus:bg-[#00450d]/5 focus:text-[#00450d] focus:outline-none"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg><span class="truncate">Kontak</span></a>
+      </div>
+    </nav>
+  </details>
+</body></html>
