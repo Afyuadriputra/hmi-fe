@@ -1,20 +1,24 @@
 ﻿# PRD Frontend SI-HMI Pekanbaru & Integrasi API
 
 ## Ringkasan
+
 Frontend publik React untuk SI-HMI Pekanbaru yang dibangun dengan Vite, TypeScript, Tailwind CSS, dan TanStack Query.
 
 ## Sistem Desain: "Editorial Intelektual"
+
 - **Tipografi:** Newsreader (Judul), Inter (Isi).
 - **Warna:** Hijau Tua (#00450d), Hijau Rimba (#1b5e20), Aksen emas, Permukaan netral.
 - **Filosofi:** Editorial premium, tata letak Golden Ratio, ruang kosong luas, dan glassmorphism.
 
 ## Strategi Integrasi API
+
 - URL Dasar: `http://127.0.0.1:8000`
 - Client: Axios/Fetch wrapper in `src/lib/api.ts`.
 - Manajemen State: TanStack Query for caching and server state.
 - Formulir: React Hook Form + Zod.
 
 ## Roadmap Halaman
+
 1. **Beranda:** `/api/v1/home/` - Hero multi-bagian, ringkasan berita, dan agenda.
 2. **Organisasi:** Profil, kepengurusan, dan sejarah ketua umum.
 3. **Program & Agenda:** Daftar dan halaman detail berbasis slug.
@@ -24,23 +28,23 @@ Frontend publik React untuk SI-HMI Pekanbaru yang dibangun dengan Vite, TypeScri
 
 ## Cakupan Layar Statis
 
-| Static Screen | Kontrak API Backend | Status |
-| --- | --- | --- |
-| `halaman_beranda/code.html` | `GET /api/v1/home/` | Tersedia |
-| `profil_organisasi/code.html` | `GET /api/v1/organization/profile/` | Tersedia |
-| `kepengurusan_cabang/code.html` | `GET /api/v1/organization/management/` | Tersedia |
-| `sejarah_ketua_umum/code.html` | `GET /api/v1/organization/chairmen/` | Tersedia |
-| `direktori_program/code.html` | `GET /api/v1/programs/` | Tersedia |
-| `detail_program/code.html` | `GET /api/v1/programs/:slug/` | Ditambahkan |
-| `direktori_agenda/code.html` | `GET /api/v1/events/` | Tersedia |
-| `detail_agenda/code.html` | `GET /api/v1/events/:slug/` | Ditambahkan |
-| `arsip_berita/code.html` | `GET /api/v1/news/`, `GET /api/v1/news/categories/` | Tersedia |
-| `detail_artikel_berita/code.html` | `GET /api/v1/news/:slug/` | Tersedia |
-| `halaman_galeri/code.html` | `GET /api/v1/gallery/`, `GET /api/v1/gallery/categories/` | Ditambahkan |
-| `direktori_formulir_pendaftaran/code.html` | `GET /api/v1/registration-forms/` | Tersedia |
-| `halaman_kontak/code.html` | `POST /api/v1/contact-messages/` | Ditambahkan |
-| `pengajuan_upload_berita/code.html` | `POST /api/v1/news-requests/`, `POST /api/v1/news-requests/:id/payment/` | Tersedia |
-| `lacak_pengajuan_berita/code.html` | `GET /api/v1/news-requests/track/:tracking_code/` | Ditambahkan |
+| Static Screen                              | Kontrak API Backend                                                      | Status      |
+| ------------------------------------------ | ------------------------------------------------------------------------ | ----------- |
+| `halaman_beranda/index.html`               | `GET /api/v1/home/`                                                      | Tersedia    |
+| `profil_organisasi/code.html`              | `GET /api/v1/organization/profile/`                                      | Tersedia    |
+| `kepengurusan_cabang/code.html`            | `GET /api/v1/organization/management/`                                   | Tersedia    |
+| `sejarah_ketua_umum/code.html`             | `GET /api/v1/organization/chairmen/`                                     | Tersedia    |
+| `direktori_program/code.html`              | `GET /api/v1/programs/`                                                  | Tersedia    |
+| `detail_program/code.html`                 | `GET /api/v1/programs/:slug/`                                            | Ditambahkan |
+| `direktori_agenda/code.html`               | `GET /api/v1/events/`                                                    | Tersedia    |
+| `detail_agenda/code.html`                  | `GET /api/v1/events/:slug/`                                              | Ditambahkan |
+| `arsip_berita/code.html`                   | `GET /api/v1/news/`, `GET /api/v1/news/categories/`                      | Tersedia    |
+| `detail_artikel_berita/code.html`          | `GET /api/v1/news/:slug/`                                                | Tersedia    |
+| `halaman_galeri/code.html`                 | `GET /api/v1/gallery/`, `GET /api/v1/gallery/categories/`                | Ditambahkan |
+| `direktori_formulir_pendaftaran/code.html` | `GET /api/v1/registration-forms/`                                        | Tersedia    |
+| `halaman_kontak/code.html`                 | `POST /api/v1/contact-messages/`                                         | Ditambahkan |
+| `pengajuan_upload_berita/code.html`        | `POST /api/v1/news-requests/`, `POST /api/v1/news-requests/:id/payment/` | Tersedia    |
+| `lacak_pengajuan_berita/code.html`         | `GET /api/v1/news-requests/track/:tracking_code/`                        | Ditambahkan |
 
 ## Catatan Mapping Field API
 
