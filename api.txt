@@ -1,0 +1,295 @@
+You are a senior frontend engineer and UI designer. Build a public-facing React frontend for “SI-HMI Pekanbaru” using the existing Django backend API contract.
+
+## Backend API
+
+Base URL:
+`http://127.0.0.1:8000`
+
+OpenAPI schema:
+`GET /api/schema/`
+
+Swagger docs:
+`GET /api/docs/`
+
+Use these public API endpoints only. Do not build admin panel features.
+
+### Public Endpoints
+
+Home:
+`GET /api/v1/home/`
+
+Organization:
+`GET /api/v1/organization/profile/`
+`GET /api/v1/organization/management/`
+`GET /api/v1/organization/chairmen/`
+
+Programs:
+`GET /api/v1/programs/`
+`GET /api/v1/programs/:slug/`
+
+Events:
+`GET /api/v1/events/`
+`GET /api/v1/events/:slug/`
+
+News:
+`GET /api/v1/news/`
+`GET /api/v1/news/?category=:categorySlug`
+`GET /api/v1/news/:slug/`
+`GET /api/v1/news/categories/`
+
+Gallery:
+`GET /api/v1/gallery/`
+`GET /api/v1/gallery/?category=:categorySlug`
+`GET /api/v1/gallery/categories/`
+
+Registration:
+`GET /api/v1/registration-forms/`
+`GET /api/v1/registration-forms/?type=lk1`
+
+Contact:
+`POST /api/v1/contact-messages/`
+
+Payload:
+{
+  "sender_name": "string",
+  "sender_email": "email",
+  "sender_phone": "string",
+  "subject": "string",
+  "message": "string"
+}
+
+News Upload Request:
+`POST /api/v1/news-requests/`
+
+Payload can be JSON or multipart:
+{
+  "requester_name": "string",
+  "requester_email": "email",
+  "requester_phone": "string",
+  "title": "string",
+  "category": number | null,
+  "content": "string",
+  "image": file | null,
+  "attachment": file | null
+}
+
+Response includes:
+{
+  "id": number,
+  "tracking_code": "uuid",
+  "price": "50000.00",
+  "status": "pending"
+}
+
+Payment proof:
+`POST /api/v1/news-requests/:id/payment/`
+
+Multipart payload:
+{
+  "payment_method": "string",
+  "payment_proof": file
+}
+
+Request tracking:
+`GET /api/v1/news-requests/track/:tracking_code/`
+
+Response includes:
+{
+  "tracking_code": "uuid",
+  "title": "string",
+  "price": "decimal",
+  "status": "pending|waiting_payment|paid|approved|rejected|published",
+  "payment_status": "unpaid|paid|verified|rejected",
+  "reviewed_at": "datetime|null",
+  "notes": "string"
+}
+
+## Frontend Stack
+
+Use:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui or headless accessible components
+- React Router
+- TanStack Query or SWR for API fetching
+- React Hook Form + Zod for forms
+- Axios or fetch wrapper
+
+Create `.env`:
+`VITE_API_BASE_URL=http://127.0.0.1:8000`
+
+Centralize API calls in:
+`src/lib/api.ts`
+
+## Pages Required
+
+Build these public pages:
+
+1. Home
+Use `/api/v1/home/`.
+Sections:
+- Hero
+- Organization summary
+- Featured programs
+- Latest news
+- Upcoming events
+- Gallery preview
+- Registration CTA
+- Contact CTA
+
+2. Organization Profile
+Use `/api/v1/organization/profile/`.
+
+3. Management
+Use `/api/v1/organization/management/`.
+
+4. Chairman History
+Use `/api/v1/organization/chairmen/`.
+
+5. Programs
+Use list/detail:
+- `/api/v1/programs/`
+- `/api/v1/programs/:slug/`
+
+6. Events
+Use list/detail:
+- `/api/v1/events/`
+- `/api/v1/events/:slug/`
+
+7. News
+Use:
+- `/api/v1/news/`
+- `/api/v1/news/categories/`
+- `/api/v1/news/?category=:slug`
+- `/api/v1/news/:slug/`
+
+8. Gallery
+Use:
+- `/api/v1/gallery/`
+- `/api/v1/gallery/categories/`
+- `/api/v1/gallery/?category=:slug`
+
+9. Registration Forms
+Use `/api/v1/registration-forms/`.
+Buttons must open Google Form URL in new tab.
+
+10. Contact
+Use `POST /api/v1/contact-messages/`.
+
+11. News Upload Request
+Step 1: submit request to `/api/v1/news-requests/`.
+Step 2: show tracking code and payment price.
+Step 3: upload payment proof to `/api/v1/news-requests/:id/payment/`.
+
+12. Track News Request
+User enters tracking code.
+Fetch `/api/v1/news-requests/track/:tracking_code/`.
+Show request status and payment status.
+
+## Design System
+
+Implement this visual direction exactly: “The Intellectual Editorial”.
+
+Creative North Star:
+The Academic Vanguard. High-end editorial experience, not generic web template. Historic institutional authority + modern youth intellectual energy.
+
+Visual rules:
+- Avoid boxy template layout.
+- Use intentional asymmetry.
+- Use expansive whitespace.
+- Use editorial composition.
+- Use Golden Ratio layout splits where possible, around 38% / 62%.
+- No 1px black borders.
+- Sectioning through background shifts, whitespace, and tonal nesting.
+- Use subtle glassmorphism on sticky nav, dropdowns, and modal surfaces.
+- Use skeleton loaders, not generic spinners.
+
+Color tokens:
+- Primary: `#00450d`
+- Primary Container: `#1b5e20`
+- Gold Dark: `#705d00`
+- Gold Light: `#ffe16d`
+- Surface: `#f9f9f9`
+- Charcoal: `#5f5e5e`
+- White: `#ffffff`
+- Surface Low: `#f3f3f3`
+
+Typography:
+Use only:
+- Newsreader for display/headline
+- Inter for UI/body
+
+Load fonts from Google Fonts.
+
+Typography:
+- Hero H1: Newsreader, large, elegant, 3.5rem desktop, responsive mobile.
+- Section headings: Newsreader.
+- Body/nav/forms: Inter.
+- Metadata/category labels: Inter, uppercase, 0.05em tracking.
+
+Components:
+- Buttons:
+  - Primary: gradient 135deg from `#00450d` to `#1b5e20`, white text, radius `0.75rem`.
+  - Secondary: ghost, primary text, subtle ghost border.
+  - Tertiary: gold accent.
+- Cards:
+  - No hard borders.
+  - Background white or surface low.
+  - Generous padding.
+  - Hover background shift + ambient shadow.
+- Inputs:
+  - Minimal, underline or soft fill.
+  - Focus color primary.
+  - Error state clear and accessible.
+- Navbar:
+  - Sticky.
+  - Liquid glass: semi-transparent surface, backdrop blur 12px-20px.
+- Loading:
+  - Skeleton shimmer.
+- Error states:
+  - Helpful text.
+  - Retry button.
+
+Accessibility:
+- WCAG AA contrast.
+- Keyboard focus visible.
+- Semantic HTML.
+- Form labels required.
+- Image alt text fallback.
+- Buttons must have clear accessible names.
+
+## Behavior Requirements
+
+- Use pagination response shape from DRF:
+{
+  "count": number,
+  "next": string | null,
+  "previous": string | null,
+  "results": []
+}
+
+- Handle empty states elegantly.
+- Handle loading and error states for every API request.
+- Use absolute media URLs from API response directly.
+- Do not hardcode content that comes from API.
+- Do not create admin dashboard.
+- Do not add payment gateway; only payment proof upload.
+- Do not generate certificate features.
+- Keep frontend public-only.
+
+## Deliverables
+
+Create production-ready React app with:
+- Clean folder structure
+- API client
+- Typed API interfaces
+- Reusable layout
+- Reusable cards
+- Reusable section heading
+- Reusable skeleton components
+- Responsive mobile/tablet/desktop layout
+- Route-based pages
+- Forms with validation
+- Beautiful editorial UI matching design system

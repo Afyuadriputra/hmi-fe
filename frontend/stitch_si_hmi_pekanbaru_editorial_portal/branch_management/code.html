@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Management - SI-HMI Pekanbaru</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#002203",
+                        "background": "#fcf9f8",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#135219",
+                        "inverse-surface": "#313030",
+                        "surface-container": "#f0eded",
+                        "tertiary": "#705d00",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-surface-variant": "#41493e",
+                        "on-background": "#1c1b1c",
+                        "surface-container-highest": "#e5e2e1",
+                        "inverse-on-surface": "#f3f0f0",
+                        "tertiary-container": "#c5aa3c",
+                        "primary-fixed": "#b0f3a7",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-secondary-container": "#766307",
+                        "secondary-container": "#fce17e",
+                        "inverse-primary": "#95d78e",
+                        "on-secondary-fixed-variant": "#544600",
+                        "on-primary-container": "#74b46e",
+                        "primary-container": "#00450d",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c0c9bb",
+                        "surface-container-high": "#eae7e7",
+                        "secondary": "#705d00",
+                        "surface-variant": "#e5e2e1",
+                        "secondary-fixed": "#fce17e",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fcf9f8",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-fixed-dim": "#e1c554",
+                        "surface-tint": "#2e6b2f",
+                        "on-secondary-fixed": "#221b00",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#95d78e",
+                        "surface": "#fcf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "outline": "#717a6d",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#dfc566",
+                        "on-surface": "#1c1b1c",
+                        "tertiary-fixed": "#ffe16e",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary": "#002c06"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin": "32px",
+                        "golden-ratio-wide": "61.8%",
+                        "section-gap": "80px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "golden-ratio-thin": "38.2%"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Newsreader"],
+                        "label-sm": ["Inter"],
+                        "display-md": ["Newsreader"],
+                        "label-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Newsreader"],
+                        "headline-lg": ["Newsreader"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "display-md": ["48px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .glass-nav {
+                @apply bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md;
+            }
+            .nav-link-active {
+                @apply text-emerald-900 dark:text-amber-400 border-b-2 border-amber-500 pb-1;
+            }
+            .nav-link-inactive {
+                @apply text-zinc-600 dark:text-zinc-400 hover:text-emerald-800;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pt-20 pb-safe md:pb-0">
+<!-- TopNavBar (Web) -->
+<nav class="hidden md:block fixed top-0 w-full z-50 glass-nav border-b border-emerald-900/10 shadow-sm">
+<div class="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto">
+<div class="font-display-md text-display-md text-emerald-900">
+                SI-HMI Pekanbaru
+            </div>
+<div class="flex space-x-6 items-center">
+<a class="font-label-lg text-label-lg nav-link-active hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 transition-transform" href="../branch_management/code.html">Management</a>
+<a class="font-label-lg text-label-lg nav-link-inactive hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 transition-transform" href="../chairman_history/code.html">History</a>
+<a class="font-label-lg text-label-lg nav-link-inactive hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 transition-transform" href="../news_archive/code.html">Archive</a>
+<a class="font-label-lg text-label-lg nav-link-inactive hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 transition-transform" href="../contact_page/code.html">Contact</a>
+<button class="ml-4 text-emerald-900 hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined text-2xl">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-6 md:px-8 pt-12 pb-24">
+<header class="mb-section-gap">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Kepengurusan Cabang</h1>
+<div class="h-1 w-24 bg-primary-container rounded-full"></div>
+</header>
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Left Column: Vision & Mandate (38%) -->
+<aside class="md:w-[38.2%] flex-shrink-0">
+<div class="sticky top-32 space-y-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary-container mb-4 italic">Visi &amp; Misi Kabinet</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                            Menghadirkan kepemimpinan yang progresif dan berakar pada nilai-nilai keislaman serta keindonesiaan. Kepengurusan saat ini berfokus pada penguatan kapasitas kader dan adaptasi teknologi untuk menjawab tantangan zaman.
+                        </p>
+<blockquote class="border-l-4 border-tertiary-container pl-4 py-2 my-6">
+<p class="font-display-md text-headline-md italic text-secondary">"Terbinanya insan akademis, pencipta, pengabdi yang bernafaskan Islam, dan bertangung jawab atas terwujudnya masyarakat adil makmur yang diridhoi Allah SWT."</p>
+</blockquote>
+</div>
+</div>
+</aside>
+<!-- Right Column: Directory (62%) -->
+<section class="md:w-[61.8%]">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_24px_rgba(0,69,13,0.04)] hover:bg-surface-container-low transition-colors duration-300 border border-transparent hover:border-outline-variant/30 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 bg-surface-variant flex items-center justify-center">
+<img alt="Portrait" class="w-full h-full object-cover" data-alt="professional portrait of an indonesian man in formal attire with dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnGfXWO-AvUDWqZH6uL0uQShyajoRhzU9fwHq5_3E7jQVM3W3Z3aamlV2zRMdaFeJ98p0wBZa7o4qh5VgZ5JRSPUvqKb7aJi1m13lN_xpO6azoTtSzkCfcZZjjzPEzQ8OiV75zFlF1MXf3yCLReWASIAM8-1FeWb3oF69IVbDQNEUFGcIQHQdFFg16PLMOIb4lz262uaC7K2AXqTW5yfw9IER1HPYWpZ1Ro0tI8XM1BdSqAFvacT6QHt0jZkaspWJxytJ0PYqDRray"/>
+</div>
+<h3 class="font-headline-lg text-headline-md text-primary mb-1">Ahmad Ridhwan</h3>
+<p class="font-label-lg text-label-lg text-primary-container uppercase tracking-wider">Ketua Umum</p>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_24px_rgba(0,69,13,0.04)] hover:bg-surface-container-low transition-colors duration-300 border border-transparent hover:border-outline-variant/30 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 bg-surface-variant flex items-center justify-center">
+<img alt="Portrait" class="w-full h-full object-cover" data-alt="professional portrait of an indonesian woman in formal hijab attire with neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw05lPO8TT7Pm9DXlnaTy0lEtkln6TcFOxWxdO_XUzH3fm1D-90W3nGMLNqgI1MpyCBognMbdUsLgCXhg1YVmym2hbInM0zkwEfNn04l1_PqXHOCNzV5nDm0y99fRf2fMTTkyd9ME90R3M-xQWVM2PBWf9-Bb2frLxxYuNNg2KbC9aSuAxTdKHuUCnkuX7JoXjC2MWxINs0GEEVSs6AS5z7UsWhaPsva24COciMMuo17StamqWAQgi6v1lsNWyttZCHwBkdIlpxH9w"/>
+</div>
+<h3 class="font-headline-lg text-headline-md text-primary mb-1">Siti Nurhaliza</h3>
+<p class="font-label-lg text-label-lg text-primary-container uppercase tracking-wider">Sekretaris Umum</p>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_24px_rgba(0,69,13,0.04)] hover:bg-surface-container-low transition-colors duration-300 border border-transparent hover:border-outline-variant/30 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 bg-surface-variant flex items-center justify-center">
+<img alt="Portrait" class="w-full h-full object-cover" data-alt="professional portrait of an indonesian man in smart casual attire with bright office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAVzznxOGLOXwjYSZLsrZaXeVmKDuOR4fPdnVwk6UHH_1OCFRZjpvfyrpt2KLW4tyfUYG753SNNz4yUQYbr1xg5La3y6WGFonWOgdJv54pt95loBxkk-8iqmRiDD6Xc_6b7IbnYoRgqe4z2NuXShsmAZNMTvc8JePMWJ6y9AIvFBIaIxmRzn8Vr68yqwZXtOTVmFdepiYoV19Osis_ZLCFLqohuUU0RmVrZOi5fCa0N5_lw3DTkSzyZ40DXcxRBUtAJhfZhJv1Ucfc"/>
+</div>
+<h3 class="font-headline-lg text-headline-md text-primary mb-1">Budi Santoso</h3>
+<p class="font-label-lg text-label-lg text-primary-container uppercase tracking-wider">Bendahara Umum</p>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_24px_rgba(0,69,13,0.04)] hover:bg-surface-container-low transition-colors duration-300 border border-transparent hover:border-outline-variant/30 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-outline">person</span>
+</div>
+<h3 class="font-headline-lg text-headline-md text-primary mb-1">Dian Pertiwi</h3>
+<p class="font-label-lg text-label-lg text-primary-container uppercase tracking-wider">Ketua Bidang PAO</p>
+</article>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-white border-t border-emerald-900/10 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] h-16 pb-safe">
+<div class="flex justify-around items-center h-full px-4">
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-100 px-4 py-1.5 rounded-xl transition-all" href="../home_page/code.html">
+<span class="material-symbols-outlined mb-1 text-xl">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-emerald-900 text-white rounded-xl px-4 py-1.5 scale-90 transition-all" href="../branch_management/code.html">
+<span class="material-symbols-outlined mb-1 text-xl" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="font-label-sm text-label-sm">Management</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-100 px-4 py-1.5 rounded-xl transition-all" href="../chairman_history/code.html">
+<span class="material-symbols-outlined mb-1 text-xl">history_edu</span>
+<span class="font-label-sm text-label-sm">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-100 px-4 py-1.5 rounded-xl transition-all" href="../contact_page/code.html">
+<span class="material-symbols-outlined mb-1 text-xl">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>

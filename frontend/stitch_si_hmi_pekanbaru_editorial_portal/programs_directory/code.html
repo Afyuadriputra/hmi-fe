@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Programs - SI-HMI Pekanbaru</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dcd9d9",
+                    "secondary-fixed": "#fce17e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#221b00",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e5e2e1",
+                    "background": "#fcf9f8",
+                    "surface-container": "#f0eded",
+                    "surface": "#fcf9f8",
+                    "on-tertiary-container": "#4c3f00",
+                    "surface-bright": "#fcf9f8",
+                    "on-surface": "#1c1b1c",
+                    "secondary": "#705d00",
+                    "error-container": "#ffdad6",
+                    "on-surface-variant": "#41493e",
+                    "outline-variant": "#c0c9bb",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#221b00",
+                    "on-primary-fixed-variant": "#135219",
+                    "tertiary-fixed": "#ffe16e",
+                    "inverse-primary": "#95d78e",
+                    "primary-container": "#00450d",
+                    "surface-tint": "#2e6b2f",
+                    "on-primary-container": "#74b46e",
+                    "inverse-on-surface": "#f3f0f0",
+                    "primary": "#002c06",
+                    "tertiary-fixed-dim": "#e1c554",
+                    "surface-container-low": "#f6f3f2",
+                    "secondary-fixed-dim": "#dfc566",
+                    "surface-container-high": "#eae7e7",
+                    "surface-variant": "#e5e2e1",
+                    "secondary-container": "#fce17e",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#313030",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "tertiary": "#705d00",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#544600",
+                    "on-background": "#1c1b1c",
+                    "outline": "#717a6d",
+                    "tertiary-container": "#c5aa3c",
+                    "on-secondary-container": "#766307",
+                    "primary-fixed": "#b0f3a7",
+                    "on-primary-fixed": "#002203",
+                    "primary-fixed-dim": "#95d78e",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "golden-ratio-wide": "61.8%",
+                    "golden-ratio-thin": "38.2%",
+                    "section-gap": "80px",
+                    "base": "8px",
+                    "margin": "32px"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "Newsreader"
+                    ],
+                    "headline-lg": [
+                            "Newsreader"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "display-md": [
+                            "Newsreader"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "label-lg": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Newsreader"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-md": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, theme('colors.primary') 0%, theme('colors.primary-container') 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-[#1b5e20]/10 shadow-[0_4px_30px_rgba(0,69,13,0.05)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
+<div class="font-['Newsreader'] text-2xl font-bold tracking-tighter text-[#00450d] dark:text-white">
+                SI-HMI Pekanbaru
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Newsreader'] italic text-lg lg:font-['Inter'] lg:not-italic lg:text-sm lg:font-medium lg:tracking-wide text-[#00450d] dark:text-[#2e7d32]">
+<a class="text-slate-600 dark:text-slate-300 hover:text-[#00450d] transition-colors hover:bg-[#00450d]/5 duration-300 px-3 py-2 rounded-lg" href="../news_archive/code.html">Discourse</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-[#00450d] transition-colors hover:bg-[#00450d]/5 duration-300 px-3 py-2 rounded-lg" href="../news_archive/code.html">Archive</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-[#00450d] transition-colors hover:bg-[#00450d]/5 duration-300 px-3 py-2 rounded-lg" href="../events_directory/code.html">Events</a>
+<a class="text-[#00450d] border-b-2 border-[#b8860b] pb-1 px-3 py-2" href="../programs_directory/code.html">Programs</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-[#00450d] transition-colors hover:bg-[#00450d]/5 duration-300 px-3 py-2 rounded-lg" href="../organization_profile/code.html">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center justify-center btn-gradient text-on-primary font-label-lg text-label-lg uppercase px-6 py-3 rounded-full hover:shadow-[0_4px_12px_rgba(0,44,6,0.2)] transition-all duration-300 scale-95 active:scale-100">
+                    Join Movement
+                </button>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-section-gap px-margin lg:px-8 max-w-[1440px] mx-auto w-full">
+<!-- Header Section -->
+<header class="mb-section-gap max-w-4xl">
+<h1 class="font-display-lg text-display-lg text-primary mb-6">
+                Curricula &amp; <br/>
+<span class="italic font-light text-primary-container">Intellectual Initiatives</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed border-l-2 border-primary/20 pl-6">
+                A rigorous directory of our ongoing academic and leadership tracks designed to forge the next generation of vanguard thinkers and civic leaders.
+            </p>
+</header>
+<!-- 38/62 Asymmetric Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-16">
+<!-- Left Column: Context / Filters (38%) -->
+<aside class="col-span-1 lg:col-span-4 flex flex-col gap-8">
+<div class="sticky top-40">
+<h2 class="font-headline-md text-headline-md text-primary mb-6 pb-4 border-b border-outline-variant/30">
+                        Tracks of Inquiry
+                    </h2>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li>
+<a class="flex items-center justify-between py-2 group hover:text-primary transition-colors" href="../programs_directory/code.html">
+<span>Core Pedagogy</span>
+<span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">arrow_forward</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-2 group hover:text-primary transition-colors" href="../programs_directory/code.html">
+<span>Public Discourse</span>
+<span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">arrow_forward</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-2 group hover:text-primary transition-colors" href="../programs_directory/code.html">
+<span>Civic Praxis</span>
+<span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">arrow_forward</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-2 group hover:text-primary transition-colors" href="../programs_directory/code.html">
+<span>Fellowships</span>
+<span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">arrow_forward</span>
+</a>
+</li>
+</ul>
+<div class="mt-12 bg-surface-container-low p-8 rounded-xl border border-outline-variant/20 relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">auto_stories</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Request Syllabus</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Gain access to the comprehensive reading lists for our core programs.
+                            </p>
+<a class="inline-flex items-center gap-2 font-label-lg text-label-lg uppercase tracking-wider text-primary hover:text-primary-container transition-colors" href="../program_detail/code.html">
+                                Download PDF <span class="material-symbols-outlined text-lg">download</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Column: Program Cards (62%) -->
+<div class="col-span-1 lg:col-span-8 flex flex-col gap-gutter">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-full p-8 lg:p-10 shadow-[0_8px_30px_rgba(0,44,6,0.04)] border border-primary/5 hover:shadow-[0_12px_40px_rgba(0,44,6,0.08)] transition-all duration-300 group flex flex-col sm:flex-row gap-8 items-start">
+<div class="w-24 h-24 rounded-full bg-surface-container-low flex items-center justify-center shrink-0 border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform duration-500">account_balance</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-3">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary/70 bg-primary/5 px-3 py-1 rounded-full">Core Pedagogy</span>
+<span class="w-12 h-[1px] bg-outline-variant/40"></span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Fall Semester</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4 group-hover:text-primary-container transition-colors">Foundations of Structural Critique</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                            An intensive seminar exploring the historical dialectics of societal structures. Participants will engage with primary texts to develop advanced analytical frameworks.
+                        </p>
+<a class="inline-flex items-center font-label-lg text-label-lg text-primary group-hover:gap-2 transition-all" href="../program_detail/code.html">
+                            Review Curriculum <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span>
+</a>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-full p-8 lg:p-10 shadow-[0_8px_30px_rgba(0,44,6,0.04)] border border-primary/5 hover:shadow-[0_12px_40px_rgba(0,44,6,0.08)] transition-all duration-300 group flex flex-col sm:flex-row gap-8 items-start">
+<div class="w-24 h-24 rounded-full bg-surface-container-low flex items-center justify-center shrink-0 border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform duration-500">campaign</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-3">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary/70 bg-primary/5 px-3 py-1 rounded-full">Public Discourse</span>
+<span class="w-12 h-[1px] bg-outline-variant/40"></span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Monthly Sessions</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4 group-hover:text-primary-container transition-colors">The Vanguard Symposia</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                            Open forums designed to elevate public debate. Scholars and community leaders converge to deconstruct contemporary socio-political challenges.
+                        </p>
+<a class="inline-flex items-center font-label-lg text-label-lg text-primary group-hover:gap-2 transition-all" href="../event_detail/code.html">
+                            View Schedule <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span>
+</a>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-full p-8 lg:p-10 shadow-[0_8px_30px_rgba(0,44,6,0.04)] border border-primary/5 hover:shadow-[0_12px_40px_rgba(0,44,6,0.08)] transition-all duration-300 group flex flex-col sm:flex-row gap-8 items-start">
+<div class="w-24 h-24 rounded-full bg-surface-container-low flex items-center justify-center shrink-0 border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform duration-500">group_work</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-3">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary/70 bg-primary/5 px-3 py-1 rounded-full">Civic Praxis</span>
+<span class="w-12 h-[1px] bg-outline-variant/40"></span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Ongoing</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4 group-hover:text-primary-container transition-colors">Urban Policy Action Labs</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                            Translating theory into tangible community impact. Fellows collaborate with local municipalities to draft and advocate for progressive structural reforms.
+                        </p>
+<a class="inline-flex items-center font-label-lg text-label-lg text-primary group-hover:gap-2 transition-all" href="../program_detail/code.html">
+                            Read Case Studies <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f3f3f3] dark:bg-slate-950 w-full py-20 px-8 border-t border-[#1b5e20]/10">
+<div class="grid grid-cols-1 md:grid-cols-[38%_62%] gap-12 max-w-[1440px] mx-auto">
+<div>
+<div class="font-['Newsreader'] text-3xl font-black text-[#00450d] dark:text-white mb-6">
+                    SI-HMI Pekanbaru
+                </div>
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-[#00450d] dark:text-[#1b5e20] opacity-80 hover:opacity-100 transition-opacity">
+                    Â© 2024 SI-HMI Pekanbaru. The Academic Vanguard.
+                </p>
+</div>
+<div class="flex flex-wrap gap-8 md:justify-end items-end font-['Inter'] text-xs uppercase tracking-widest">
+<a class="text-slate-500 hover:text-[#00450d] hover:underline decoration-[#b8860b] underline-offset-4 transition-all duration-300" href="../organization_profile/code.html">Editorial Policy</a>
+<a class="text-slate-500 hover:text-[#00450d] hover:underline decoration-[#b8860b] underline-offset-4 transition-all duration-300" href="../contact_page/code.html">Privacy Ledger</a>
+<a class="text-slate-500 hover:text-[#00450d] hover:underline decoration-[#b8860b] underline-offset-4 transition-all duration-300" href="../contact_page/code.html">Contact Secretary</a>
+<a class="text-slate-500 hover:text-[#00450d] hover:underline decoration-[#b8860b] underline-offset-4 transition-all duration-300" href="../news_archive/code.html">Archives</a>
+</div>
+</div>
+</footer>
+</body></html>

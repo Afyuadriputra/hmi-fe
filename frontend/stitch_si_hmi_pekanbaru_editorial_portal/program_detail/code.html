@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Program - SI-HMI Pekanbaru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { primary: "#00450d", "primary-container": "#1b5e20", tertiary: "#705d00", surface: "#f9f9f9", "surface-low": "#f3f3f3", charcoal: "#5f5e5e" }, fontFamily: { display: ["Newsreader"], body: ["Inter"] } } } };
+  </script>
+</head>
+<body class="bg-surface text-charcoal font-body">
+  <main class="mx-auto max-w-7xl px-8 py-24" data-api="GET /api/v1/programs/:slug/">
+    <a href="../programs_directory/code.html" class="text-xs font-semibold uppercase tracking-widest text-tertiary">Kembali ke Program</a>
+    <header class="mt-10 grid gap-12 md:grid-cols-[38.2%_61.8%]">
+      <aside>
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-tertiary" data-field="category">Kaderisasi</p>
+        <h1 class="font-display text-5xl leading-tight text-primary md:text-6xl" data-field="title">Latihan Kader I</h1>
+        <p class="mt-6 text-sm text-primary" data-field="slug">slug: latihan-kader-i</p>
+      </aside>
+      <div>
+        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80" alt="Gambar program" class="aspect-[16/10] w-full rounded-xl object-cover shadow-[0_12px_32px_-4px_rgba(26,28,28,0.06)]" data-field="image" />
+      </div>
+    </header>
+
+    <section class="mt-16 grid gap-12 md:grid-cols-[38.2%_61.8%]">
+      <aside class="rounded-xl bg-surface-low p-8">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary">Aksi Program</p>
+        <p class="mt-4 text-sm leading-7" data-field="description">Deskripsi singkat program tampil di area ini.</p>
+        <a href="https://forms.google.com" class="mt-8 inline-flex rounded-xl bg-gradient-to-br from-primary to-primary-container px-6 py-4 text-xs font-semibold uppercase tracking-widest text-white" data-field="registration_form_url">Buka Form Pendaftaran</a>
+      </aside>
+      <article class="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-primary prose-p:leading-8" data-field="content">
+        <p>Konten lengkap program dari backend ditampilkan di sini. Field yang dipakai: title, category, description, content, image, icon, button_text, button_link, registration_form_url.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
