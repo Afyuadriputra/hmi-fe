@@ -195,7 +195,7 @@
       <a href="../direktori_formulir_pendaftaran/code.html" class="shrink-0 rounded-xl bg-gradient-to-br from-[#00450d] to-[#1b5e20] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_14px_32px_-20px_rgba(0,69,13,0.75)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_38px_-22px_rgba(0,69,13,0.8)] focus:outline-none focus:ring-2 focus:ring-[#00450d]/25">Pendaftaran</a>
     </div>
   </nav><!-- Main Content Canvas -->
-<main class="pt-32 pb-section-gap min-h-screen">
+<main class="pt-32 pb-section-gap min-h-screen" data-api-create="POST /api/v1/news-requests/" data-api-payment="POST /api/v1/news-requests/:id/payment/">
 <div class="max-w-7xl mx-auto px-margin">
 <div class="mb-12">
 <h1 class="font-display-md text-display-md text-primary mb-4">Ajukan Publikasi Berita</h1>
@@ -268,28 +268,28 @@
 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Selesai</span>
 </div>
 </div>
-<form class="space-y-8">
+<form class="space-y-8" data-api="POST /api/v1/news-requests/" enctype="multipart/form-data">
 <!-- Step 1: Information -->
 <div class="space-y-6 block">
 <h3 class="font-headline-md text-headline-md text-primary border-b border-surface-container-high pb-4">Data Pengaju</h3>
 <div class="space-y-4">
 <div>
-<label class="block font-label-lg text-label-lg text-on-surface mb-2" for="name">Nama Lengkap</label>
-<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:bg-white transition-colors" id="name" placeholder="Masukkan nama lengkap Anda" type="text"/>
+<label class="block font-label-lg text-label-lg text-on-surface mb-2" for="requester_name">Nama Lengkap</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:bg-white transition-colors" id="requester_name" name="requester_name" placeholder="Masukkan nama lengkap Anda" type="text"/>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div>
-<label class="block font-label-lg text-label-lg text-on-surface mb-2" for="email">Alamat Email</label>
-<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:bg-white transition-colors" id="email" placeholder="email@contoh.com" type="email"/>
+<label class="block font-label-lg text-label-lg text-on-surface mb-2" for="requester_email">Alamat Email</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:bg-white transition-colors" id="requester_email" name="requester_email" placeholder="email@contoh.com" type="email"/>
 </div>
 <div>
-<label class="block font-label-lg text-label-lg text-on-surface mb-2" for="phone">Nomor Telepon/WhatsApp</label>
-<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:bg-white transition-colors" id="phone" placeholder="0812xxxxxx" type="tel"/>
+<label class="block font-label-lg text-label-lg text-on-surface mb-2" for="requester_phone">Nomor Telepon/WhatsApp</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:bg-white transition-colors" id="requester_phone" name="requester_phone" placeholder="0812xxxxxx" type="tel"/>
 </div>
 </div>
 <div>
 <label class="block font-label-lg text-label-lg text-on-surface mb-2" for="instansi">Asal Instansi/Komisariat</label>
-<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:bg-white transition-colors" id="instansi" placeholder="Sebutkan instansi Anda" type="text"/>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:bg-white transition-colors" id="instansi" name="institution" placeholder="Sebutkan instansi Anda" type="text"/>
 </div>
 </div>
 <div class="flex justify-end pt-6">
@@ -300,7 +300,17 @@
 </div>
 </form>
 </div>
-<!-- Success State Overlay / Section -->
+<div class="hidden" data-contract="NewsUploadRequestCreateSerializer">
+<input name="title" type="text" data-field="title"/>
+<input name="category" type="number" data-field="category"/>
+<textarea name="content" data-field="content"></textarea>
+<input name="image" type="file" data-field="image"/>
+<input name="attachment" type="file" data-field="attachment"/>
+</div>
+<div class="hidden" data-api="POST /api/v1/news-requests/:id/payment/" data-contract="NewsRequestPaymentUploadSerializer">
+<input name="payment_method" type="text" data-field="payment_method"/>
+<input name="payment_proof" type="file" data-field="payment_proof"/>
+</div><!-- Success State Overlay / Section -->
 <div class="bg-white rounded-xl shadow-[0_8px_32px_rgba(0,69,13,0.08)] p-12 border border-primary/10 text-center relative overflow-hidden">
 <!-- Decorative Top Border -->
 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-primary-container"></div>
